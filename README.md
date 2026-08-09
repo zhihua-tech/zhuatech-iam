@@ -74,3 +74,7 @@ docker compose up --build
 </p>
 
 关键词：知华科技 IAM、身份与访问管理、统一身份认证、权限治理、访问复核、Java IAM、Spring Boot 权限系统、上海软件定制开发。
+
+## 职责分离与冲突权限检查
+
+新增 `POST /api/iam/insights/segregation-of-duties`，识别付款创建与审批、供应商创建与采购审批、用户管理与审计管理等冲突角色，并结合高权限 MFA、休眠身份和服务账号责任人输出 `ALLOW / REVIEW / SUSPEND / REVOKE_CONFLICT`。
