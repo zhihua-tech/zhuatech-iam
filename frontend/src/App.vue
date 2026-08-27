@@ -5,7 +5,7 @@ import { domain } from './domain'
 
 const mode = ref('admin')
 const active = ref('运营总览')
-const nav = ['运营总览', '业务协同', '资源中心', '风险预警', '基础设置']
+const nav = ['身份治理总览', '访问申请', '角色与权限', '职责分离策略', '访问复核与审计']
 </script>
 
 <template>
@@ -18,12 +18,12 @@ const nav = ['运营总览', '业务协同', '资源中心', '风险预警', '�
       </aside>
       <main class="main">
         <header class="topbar">
-          <div><span class="crumb">运营中心 /</span> {{ active }}</div>
+          <div><span class="crumb">身份治理中心 /</span> {{ active }}</div>
           <div class="top-actions"><button class="mode-button" @click="mode='mobile'">查看移动工作台</button><span class="bell">●</span><span class="avatar">管</span></div>
         </header>
         <div class="content">
           <section class="page-title"><div><h1>{{ domain.greeting }}</h1><p>{{ domain.scene }} · 数据更新于 09:36</p></div><button class="primary">＋ 新建协同事项</button></section>
-          <section class="notice"><span>运营提示</span><p>{{ domain.notice }}</p><a>查看详情 →</a></section>
+          <section class="notice"><span>治理提示</span><p>{{ domain.notice }}</p><a>进入访问复核 →</a></section>
           <section class="metrics">
             <article v-for="metric in domain.metrics" :key="metric.label"><p>{{ metric.label }}</p><strong>{{ metric.value }} <small>{{ metric.unit }}</small></strong><span>{{ metric.trend }}</span></article>
           </section>
