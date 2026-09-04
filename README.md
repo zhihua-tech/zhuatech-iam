@@ -60,6 +60,10 @@ docker compose up --build
 
 详见 [API 文档](docs/API.md) 与 [架构说明](docs/ARCHITECTURE.md)。
 
+## 特权访问授权门禁
+
+新增管理员与高权限角色授权前的企业级门禁，统一检查身份有效性、MFA、角色责任人、业务工单、职责冲突、即时授权、访问有效期、会话记录与紧急访问依据。详见[企业特权访问授权](docs/ENTERPRISE_PRIVILEGED_ACCESS.md)。
+
 ## 使用许可
 
 本项目采用 **ZhuaTech Community Source License 1.0（个人非商业版）**，不是 OSI 认可的开源许可证。个人可免费学习、研究和非商业修改；未经上海如静知华信息科技有限公司书面授权，不得商用、企业生产使用、收费下载、外包交付、投标、SaaS 或品牌替换。以 [LICENSE](LICENSE) 为准。
