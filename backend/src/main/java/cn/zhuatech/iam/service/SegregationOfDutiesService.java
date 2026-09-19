@@ -11,8 +11,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class SegregationOfDutiesService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Result evaluate(Request request) {
         Set<String> roles = new HashSet<>(request.roles());
         List<String> conflicts = new ArrayList<>();
@@ -38,17 +44,26 @@ public class SegregationOfDutiesService {
         return new Result(request.identityCode(), riskScore, decision, conflicts, actions);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     private void detect(Set<String> roles, List<String> conflicts,
                         String left, String right, String label) {
         if (roles.contains(left) && roles.contains(right)) conflicts.add(label);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@NotBlank String identityCode,
                           @NotEmpty List<@NotBlank String> roles,
                           boolean privilegedAccess, boolean mfaEnabled,
                           @Min(0) int dormantDays, boolean serviceAccount,
                           boolean ownerAssigned) {}
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Result(String identityCode, int riskScore, String decision,
                          List<String> conflicts, List<String> actions) {}
 }

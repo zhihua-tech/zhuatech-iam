@@ -11,16 +11,25 @@ import static org.springframework.security.test.web.servlet.request.SecurityMock
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @SpringBootTest
 @AutoConfigureMockMvc
 class IamApiIntegrationTests {
     @Autowired MockMvc mvc;
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test void publicAboutIsAccessible() throws Exception {
         mvc.perform(get("/api/public/about")).andExpect(status().isOk())
             .andExpect(jsonPath("$.data.company").value("上海如静知华信息科技有限公司"));
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test void adminCanReadDashboardAndAssessRisk() throws Exception {
         mvc.perform(get("/api/admin/dashboard").with(httpBasic("admin", "admin123"))).andExpect(status().isOk())
             .andExpect(jsonPath("$.data.total").value(4));
@@ -29,15 +38,24 @@ class IamApiIntegrationTests {
             .andExpect(status().isOk()).andExpect(jsonPath("$.data.level").exists());
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test void operatorCanUseWorkspaceButNotAdmin() throws Exception {
         mvc.perform(get("/api/workspace/tasks").with(httpBasic("operator", "operator123"))).andExpect(status().isOk());
         mvc.perform(get("/api/admin/dashboard").with(httpBasic("operator", "operator123"))).andExpect(status().isForbidden());
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test void anonymousRequestIsRejected() throws Exception {
         mvc.perform(get("/api/workspace/tasks")).andExpect(status().isUnauthorized());
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test void adminCanReviewAccessRisk() throws Exception {
         mvc.perform(post("/api/admin/access-review").with(httpBasic("admin", "admin123"))
             .contentType(MediaType.APPLICATION_JSON)

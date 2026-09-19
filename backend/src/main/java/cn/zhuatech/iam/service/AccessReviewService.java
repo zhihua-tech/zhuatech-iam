@@ -8,8 +8,14 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class AccessReviewService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public ReviewResult review(ReviewRequest request) {
         int riskScore = Math.min(30, request.orphanedAccounts() * 10)
             + Math.min(25, request.dormantPrivilegedAccounts() * 8)
@@ -27,10 +33,16 @@ public class AccessReviewService {
         return new ReviewResult(riskScore, decision, actions);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record ReviewRequest(@NotNull @Min(0) @Max(1000) Integer orphanedAccounts,
         @NotNull @Min(0) @Max(1000) Integer dormantPrivilegedAccounts,
         @NotNull @Min(0) @Max(10000) Integer excessivePrivilegeAssignments,
         @NotNull @Min(0) @Max(100) Integer mfaCoverage,
         @NotNull @Min(0) @Max(100) Integer reviewCompletion) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record ReviewResult(int riskScore, String decision, List<String> actions) {}
 }

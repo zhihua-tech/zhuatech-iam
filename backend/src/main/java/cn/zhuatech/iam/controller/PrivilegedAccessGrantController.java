@@ -8,12 +8,21 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @RestController
 @RequestMapping("/api/enterprise/iam")
 public class PrivilegedAccessGrantController {
     private final PrivilegedAccessGrantService service;
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public PrivilegedAccessGrantController(PrivilegedAccessGrantService service) { this.service = service; }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @PostMapping("/privileged-access-grant")
     public ApiResponse<?> assess(@RequestBody PrivilegedAccessGrantService.Request request) {
         return ApiResponse.ok(service.assess(request));

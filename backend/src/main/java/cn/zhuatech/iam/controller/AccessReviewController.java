@@ -6,11 +6,20 @@ import cn.zhuatech.iam.service.AccessReviewService;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @RestController
 @RequestMapping("/api/admin/access-review")
 public class AccessReviewController {
     private final AccessReviewService service;
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public AccessReviewController(AccessReviewService service) { this.service = service; }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @PostMapping
     ApiResponse<AccessReviewService.ReviewResult> review(
         @Valid @RequestBody AccessReviewService.ReviewRequest request) {

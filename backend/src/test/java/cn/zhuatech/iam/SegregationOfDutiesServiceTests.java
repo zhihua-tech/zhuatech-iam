@@ -9,9 +9,15 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 class SegregationOfDutiesServiceTests {
     private final SegregationOfDutiesService service = new SegregationOfDutiesService();
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test
     void revokesConflictingPaymentRoles() {
         var result = service.evaluate(new SegregationOfDutiesService.Request(
@@ -22,6 +28,9 @@ class SegregationOfDutiesServiceTests {
         assertFalse(result.conflicts().isEmpty());
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test
     void allowsCleanReviewedIdentity() {
         var result = service.evaluate(new SegregationOfDutiesService.Request(
