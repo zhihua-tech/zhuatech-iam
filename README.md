@@ -2,6 +2,8 @@
 
 # ZhuaTech IAM
 
+[简体中文](README.md) | [English](README.en.md)
+
 ### 知华身份与访问管理平台 · 社区源码版
 
 [官方网站](https://www.zhuatech.cn/) · [功能范围](#功能范围) · [本地运行](#本地运行) · [使用许可](#使用许可) · [咨询合作](#咨询合作)
