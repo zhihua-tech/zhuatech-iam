@@ -1,0 +1,56 @@
+[
+  {
+    "patch": {},
+    "expected": {
+      "decision": "PASS",
+      "idleDays": "#3",
+      "departureAccountRisk": "false"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "employeeDeparted": "YES"
+    },
+    "expected": {
+      "decision": "HOLD"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "lastUsed": "2026-07-25"
+    },
+    "expected": {
+      "decision": "REVIEW",
+      "idleDays": "#90"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "privilegedRoles": "1"
+    },
+    "expected": {
+      "decision": "REVIEW"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "employeeDeparted": "YES",
+      "accountActive": "NO"
+    },
+    "expected": {
+      "decision": "PASS"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "lastUsed": "2026-10-24"
+    },
+    "expected": {},
+    "error": true
+  }
+]
