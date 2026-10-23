@@ -1,5 +1,15 @@
 <div align="center">
 
+## 本次升级：账号授权期限与特权MFA预检
+
+支持 UTF-8 CSV 文件/粘贴预检、物理行定位、批次重复业务键检查、模板下载和安全 CSV 导出。
+
+- 管理员授权要求启用MFA。
+- 授权失效日期不得早于生效日期。
+- 授权到期提醒。
+
+入口：`/preflight.html`（沿用现有后端认证）。预检不写库、不执行审批，也不替代主数据存在性、库存/余额锁定及正式入库事务校验。[规则、接口与边界说明](docs/BATCH-PREFLIGHT.md)。
+
 # ZhuaTech IAM
 
 [简体中文](README.md) | [English](README.en.md)
